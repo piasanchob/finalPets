@@ -1,0 +1,137 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+<div>
+    <c-row class="empty_space center_attributs">
+        <c-col sm="2">
+            <img src="assets/images/icons/iconoVet.svg" width="200px" height="200px">
+        </c-col>
+        <c-col sm="8">
+            <h1 style="color: #5D5D81;">Nombre del Veterinario</h1>
+            <c-row id="down">
+                <c-col>
+                    <p>Horario: Lunes a Sábado de 11am a 7pm</p>
+                </c-col>
+                <c-col>
+                    <p>Ubicación: Curridabat.</p>
+                </c-col>
+                <c-col>
+                    <p>Teléfono: (506)2222-2222</p>
+                </c-col>
+            </c-row>
+        </c-col>
+    </c-row>
+</div>
+
+<div>
+    <c-row class="empty_space">
+        <c-col sm="6">
+            <div class="cuadrito">
+                <h1> Descripción del Veterinario</h1>
+                <ol>
+                    <li>Descripción general sobre la clínica veterinaria y sus especialidades..</li>
+                    <li>Descripción sobre los servicios brindados.</li>
+                    <li>Datos importantes a mencionar. Por ejemplo: si atienden a domicilio.</li>
+                </ol>
+                <h5>Ubicación exacta: Frente al cementerio, edificio de 2 pisos.</h5>
+            </div>
+        </c-col>
+        <c-col sm="5">
+            <div class="cuadrito">
+                <h1> Evaluación general</h1>
+                <ngb-rating [(rate)]="currentRate">
+                    <ng-template let-fill="fill" let-index="index">
+                      <span class="star" [class.filled]="fill === 100" [class.bad]="index < 6">&#9733;</span>
+                    </ng-template>
+                  </ngb-rating>
+                  <hr>
+                  <pre>Nota: <b>{{currentRate}}</b></pre>
+                <button [cPopover]="popoverHtml"
+                        cPopoverPlacement="right"
+                        [cPopoverTrigger]="'click'"
+                        cButton
+                        class="m-1"
+                        color="primary"
+                        size="lg">
+                Contactar
+                <ng-template #popoverHtml>
+                    <h3 class="popover-header">
+                    Nombre del Usuario
+                    </h3>
+                    <div class="popover-body">
+                    Número telefonico: (506)2222-2222
+                    Correo electrónico: veterinaria@dominio.com
+                    <i cTextColor="info"></i>
+                    </div>
+                </ng-template>
+                </button>
+            </div>
+        </c-col>
+    </c-row>
+</div>

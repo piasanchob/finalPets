@@ -1,0 +1,131 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+<div>
+    <c-row class="empty_space center_attributs">
+        <c-col sm="2">
+            <img src="assets/images/mascotas/infoMascotas.svg" width="200px" height="200px">
+        </c-col>
+        <c-col sm="4">
+            <h1 style="color: #5D5D81;">Nombre de la mascota</h1>
+            <c-row id="down">
+                <c-col>
+                    <p># Años</p>
+                </c-col>
+                <c-col>
+                    <p>Tamaño</p>
+                </c-col>
+                <c-col>
+                    <p>Actividad Física</p>
+                </c-col>
+            </c-row>
+        </c-col>
+    </c-row>
+</div>
+
+<div>
+    <c-row class="empty_space">
+        <c-col sm="6">
+            <div class="cuadrito">
+                <h1> Descripción de la mascota</h1>
+                <ol>
+                    <li>Descripción general sobre el estado de la mascota, edad y tamaño.</li>
+                    <li>Descripción sobre el nivel de actividad de la mascota y sus actividades favoritas.</li>
+                    <li>Descripción sobre el estado de salud de la mascotas, condicones de adopción, y otros datos importantes.</li>
+                </ol>
+            </div>
+        </c-col>
+        <c-col sm="5">
+            <div class="cuadrito">
+                <h1> Publicado por [Usuario]</h1>
+                <p> Hace # de días</p>
+                <p> En la provincia de [provincia]</p>
+                <button [cPopover]="popoverHtml"
+                        cPopoverPlacement="right"
+                        [cPopoverTrigger]="'click'"
+                        cButton
+                        class="m-1"
+                        color="primary"
+                        size="lg">
+                Contactar
+                <ng-template #popoverHtml>
+                    <h3 class="popover-header">
+                    Nombre del Usuario
+                    </h3>
+                    <div class="popover-body">
+                    Número telefonico: (506)8888-8888
+                    Correo electrónico: usuario@dominio.com
+                    <i cTextColor="info"></i>
+                    </div>
+                </ng-template>
+                </button>
+            </div>
+        </c-col>
+    </c-row>
+</div>

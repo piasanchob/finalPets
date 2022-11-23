@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/@coreui/coreui/scss/coreui.scss";
+/* Importing Bootstrap SCSS file. */
+@import '//~bootstrap/scss/bootstrap';
+
+.header_color {
+    background-color: #3B3355;
+}
+
+.tittle_white {
+    color: #FEFCFD;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1cm;
+}
+
+.button_attributs {
+    background-color: #5D5D81;
+    margin: 0 0.7rem;
+    color: #FEFCFD;
+}
+
+.empty_space {
+    margin: 1cm;
+}
+
+.center_button{
+    margin-left: 7cm;
+}
+
+
+

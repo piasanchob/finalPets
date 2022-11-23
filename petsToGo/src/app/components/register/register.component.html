@@ -1,0 +1,81 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <a cNavLink routerLink="/first">
+          <c-header-brand [routerLink]>
+            <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+        </c-header-brand>
+          <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+        </a>
+        <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs">
+            <a class="tittle_white" cNavLink routerLink="/register">Registrarse</a>
+        </c-nav-item>
+        <c-nav-item class="button_attributs">
+          <a class="tittle_white" cNavLink routerLink="/login">Iniciar Sesión</a>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+  </c-header>
+
+
+  <c-row class="empty_space">
+    <c-col [sm]="4">
+        <div class="clearfix">
+            <img cImg align="start" rounded src="assets/images/logo/PetsToGoClaro.png" width="600px" height="600px"/>
+            </div>
+        <div id="center_text">
+            <h2>¿Ya tienes una cuenta?</h2>
+        </div>
+        <div class = "center_button">
+          <a cNavLink routerLink="/login">
+            <button cButton color="primary" variant="outline">Iniciar sesión</button>
+          </a>
+          </div>
+    </c-col>
+    <c-col [sm]="6">
+        <div class="purpleBox">
+            <h1 style="color: #FEFCFD;">Registro</h1>
+            <c-row>
+                <c-col [xs]>
+                  <input aria-label="nombreCompleto" cFormControl [(ngModel)] = "nombre" placeholder="Nombre Completo" />
+                </c-col>
+                <c-col [xs]>
+                  <input aria-label="numIdentificacion" cFormControl [(ngModel)] = "cedula" placeholder="Número de Identificación" />
+                </c-col>
+              </c-row>
+            <c-row>
+                <c-col [xs]>
+                    <input aria-label="email" cFormControl [(ngModel)] = "correo" placeholder="Correo electrónico" />
+                  </c-col>
+                <c-col [xs]>
+                  <input aria-label="email" cFormControl [(ngModel)] = "fechanac" placeholder="Fecha Nacimiento" />
+                </c-col>
+            </c-row>
+            <c-row>
+              <c-col [xs]>
+                <c-input-group class="flex-nowrap">
+                  <span cInputGroupText id="addon-wrapping">@</span>
+                  <input aria-describedby="addon-wrapping"
+                         aria-label="nomUsuario"
+                         
+                         cFormControl [(ngModel)] = "usuario"
+                         placeholder="Nombre de Usuario"
+                  />
+                </c-input-group>
+              </c-col>
+              <c-col [xs]>
+                <input cFormControl id="inputPassword" type="password" placeholder="Contraseña" />
+              </c-col>
+            </c-row>
+            <c-form-check>
+              <input cFormCheckInput id="checkOne" type="checkbox" />
+              <label cFormCheckLabel for="checkOne" class="text_white">He leído y acepto los términos y condiciones.</label>
+            </c-form-check>
+            <div class = "center_button">
+              <a cNavLink routerLink="/home">
+                <button cButton color="light" variant="outline" (click)="addUsuario()" >Crear cuenta</button>
+              </a>
+            </div>
+            </div>
+    </c-col>
+</c-row>

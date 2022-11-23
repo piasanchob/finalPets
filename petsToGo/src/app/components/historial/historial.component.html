@@ -1,0 +1,127 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+<div>
+    <c-row class="empty_space">
+        <c-col sm="3">
+            <c-row>
+                <h1 style="color: #5D5D81;">Historial</h1>
+            </c-row>
+            <c-row>
+                <img src="assets/images/mascotas/infoMascotas.svg" width="300px" height="300px">
+            </c-row>
+            <c-row class="empty_space">
+                <button class="button_attributs" (click)="addHistorialMascota()" >Agregar Mascota</button>
+            </c-row>
+            <c-row class="empty_space">
+                <button class="button_attributs" (click)="updateHistorialMascota()" >Actualizar información </button>
+            </c-row>
+        </c-col>
+        <c-col>
+            <div class="cuadrito">
+                <h1 style="color: white;" class="center"> Información de la mascota</h1>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <input aria-label="nomMacota"  cFormControl [(ngModel)] = "nombre" placeholder="Nombre de la Mascota" />
+                    </c-col>
+                    <c-col [xs]>
+                        <input aria-label="peso"  cFormControl [(ngModel)] = "peso" placeholder="Peso" />
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <input aria-label="raza" cFormControl [(ngModel)] = "raza" placeholder="Raza" />
+                    </c-col>
+                    <c-col [xs]>
+                        <input aria-label="edad" cFormControl [(ngModel)] = "edad" placeholder="Edad en AÑOS" />
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col>
+                        <textarea cFormControl [(ngModel)] = "vacunas" id="exampleFormControlTextarea1" rows="3" placeholder="Vacunas recibidas"></textarea>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <textarea cFormControl [(ngModel)] = "observaciones" id="exampleFormControlTextarea1" rows="3" placeholder="Observaciones del Veterinario"></textarea>
+                    </c-col>
+                    <c-col [xs]>
+                        <input aria-label="vetCita" cFormControl [(ngModel)] = "proxima_cita" placeholder="Próxima cita al Veterinario: dd/mm/yyyy" />
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        
+                    </c-col>
+                   
+                </c-row>
+            </div>
+        </c-col>
+    </c-row>
+</div>

@@ -1,0 +1,135 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+
+
+<div>
+    <c-row class="empty_space">
+        <c-col sm="3">
+            <c-row>
+                <h1 style="color: #5D5D81;">Agregar Mascota</h1>
+            </c-row>
+            <c-row>
+                <img src="assets/images/icons/fotoMascota.svg" width="300px" height="300px">
+            </c-row>
+            <c-row class="empty_space">
+                <button class="button_attributs">Subir foto <img src="assets/images/icons/subirFoto.svg" width="30px" height="30px"></button>
+            </c-row>
+            <c-row class="empty_space">
+                <a cNavLink routerLink="/home">
+                <button class="button_attributs" (click)="getInputValue(nombre.value, tamano.value, tipo.value, edad.value, descripcion.value, raza.value, peso.value)" > Agregar </button>
+                </a>
+            </c-row>
+        </c-col>
+        <c-col>
+            <div class="cuadrito">
+                <h1 style="color: white;" class="center"> Información de la mascota</h1>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <input aria-label="nomMacota" #nombre cFormControl placeholder="Nombre de la Mascota" />
+                    </c-col>
+                    <c-col [xs]>
+                        <select #tamano cSelect id="inputTamanno">
+                        <option>Tamaño</option>
+                        <option value="1">Grande</option>
+                        <option value="2">Mediano</option>
+                        <option value="3">Pequeño</option>
+                        </select>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <select #tipo cSelect id="inputTipo">
+                            <option>Tipo</option>
+                            <option value="1">Perro</option>
+                            <option value="2">Gato</option>
+                        </select>
+                    </c-col>
+                    <c-col [xs]>
+                        <input aria-label="nomMacota" #edad cFormControl placeholder="Edad" />
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col>
+                        <textarea #descripcion cFormControl id="exampleFormControlTextarea1" rows="3" placeholder="Descripción"></textarea>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <input aria-label="nomMacota" #raza cFormControl placeholder="Raza" />
+                    </c-col>
+                    <c-col [xs]>
+                        <label cLabel for="customRange1" style="color: white;">Peso en KG - <strong>{{value}}</strong></label>
+                        <input [(ngModel)]="value" #peso cFormControl id="customRange1" [max]="50" [min]="1"type="range" />
+                    </c-col>
+                </c-row>
+            </div>
+        </c-col>
+    </c-row>
+</div>

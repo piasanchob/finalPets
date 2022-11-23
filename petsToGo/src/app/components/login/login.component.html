@@ -1,0 +1,63 @@
+<c-header class="header_color">
+    <c-container fluid>
+      <a cNavLink routerLink="/first">
+        <c-header-brand [routerLink]>
+          <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+      </c-header-brand>
+        <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+      </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs">
+            <a class="tittle_white" cNavLink routerLink="/register">Registrarse</a>
+        </c-nav-item>
+        <c-nav-item class="button_attributs">
+          <a class="tittle_white" cNavLink routerLink="/login">Iniciar Sesión</a>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+  </c-header>
+
+  <c-row class="empty_space">
+    <c-col [sm]="4">
+        <div class="clearfix">
+            <img cImg align="start" rounded src="assets/images/logo/PetsToGoClaro.png" width="600px" height="600px"/>
+            </div>
+        <div id="center_text">
+            <h2>¿No tienes una cuenta?</h2>
+        </div>
+        <div class = "center_button">
+          <a cNavLink routerLink="/register">
+            <button cButton color="primary" variant="outline">Registrarse</button>
+          </a>
+          </div>
+    </c-col>
+    <c-col [sm]="6">
+        <div class="purpleBox">
+            <h1 style="color: #FEFCFD;">Iniciar sesión</h1>
+            <c-row>
+                <c-col [xs]>
+                    <c-input-group class="flex-nowrap">
+                        <span cInputGroupText id="addon-wrapping">@</span>
+                        <input aria-describedby="addon-wrapping"
+                               aria-label="nomUsuario"
+                               #usuario
+                               cFormControl
+                               placeholder="Nombre de Usuario"
+                        />
+                      </c-input-group>
+                  </c-col>
+                  <c-col [xs]>
+                    <input #password cFormControl id="inputPassword" type="password" placeholder="Contraseña" />
+                  </c-col>
+              </c-row>
+            <div class="empty_space">
+                <div class = "center_button">
+                  <a cNavLink routerLink="/home">
+                    <button cButton (click)="getInputValue(usuario.value, password.value)" color="light" variant="outline">Ingresar</button>
+                  </a>
+                  </div>
+            </div>
+            
+            </div>
+    </c-col>
+</c-row>

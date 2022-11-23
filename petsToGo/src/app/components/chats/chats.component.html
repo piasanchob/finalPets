@@ -1,0 +1,182 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+
+<div class="empty_space">
+    <h1 style="color: #3B3355;"> Mis grupos</h1>
+</div>
+
+<div class="container">
+<div class="row clearfix">
+    <div class="col-lg-12">
+        <div class="card chat-app">
+            <div id="plist" class="people-list">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-search"><img src="assets/images/icons/iconoBuscar.svg" width="30px" height="30px"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+                <ul class="list-unstyled chat-list mt-2 mb-0">
+                    <li class="clearfix">
+                        <img src="assets/images/mascotas/Bruno.svg" alt="avatar">
+                        <div class="about">
+                            <div class="name">Amigos perrunos</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> 2 miembros en línea </div>                                            
+                        </div>
+                    </li>
+                    <li class="clearfix active">
+                        <img src="assets/images/mascotas/Musi.svg" alt="avatar">
+                        <div class="about">
+                            <div class="name">Amantes de los gatos</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> 1 miembro en línea</div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <img src="assets/images/mascotas/Osito.svg" alt="avatar">
+                        <div class="about">
+                            <div class="name">Salida de Juegos</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> 4 miembros en línea </div>
+                        </div>
+                    </li>                                    
+                    <li class="clearfix">
+                        <img src="assets/images/mascotas/Inge.svg" alt="avatar">
+                        <div class="about">
+                            <div class="name">Golden lover</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> 0 miembros en línea </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <img src="assets/images/mascotas/Merlin.svg" alt="avatar">
+                        <div class="about">
+                            <div class="name">Pareja para mi perro</div>
+                            <div class="status"> <i class="fa fa-circle online"></i> 18 miembros en línea </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <img src="assets/images/mascotas/infoMascotas.svg" alt="avatar">
+                        <div class="about">
+                            <div class="name">Parque temático</div>
+                            <div class="status"> <i class="fa fa-circle offline"></i> 0 miembros en línea </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat">
+                <div class="chat-header clearfix">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                <img src="assets/images/mascotas/Musi.svg" alt="avatar">
+                            </a>
+                            <div class="chat-about">
+                                <h6 class="m-b-0">Amantes de los gatos</h6>
+                                <small>Último mensaje: hace 2 horas</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-history">
+                    <ul class="m-b-0">
+                        <li class="clearfix">
+                            <div class="message-data text-right">
+                                <span class="message-data-time">10:10 AM, Hoy</span>
+                                <img src="assets/images/icons/Usuario.svg" alt="avatar">
+                            </div>
+                            <div class="message other-message float-right"> Hola amigos! Vi una promoción de jueguetes para gatitos </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <img src="assets/images/usuarios/user1.svg" alt="avatar">
+                                <span class="message-data-time">10:12 AM, Hoy</span>
+                            </div>
+                            <div class="message my-message">Genial! ¿Dónde lo viste?</div>                                    
+                        </li>                               
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <img src="assets/images/usuarios/user1.svg" alt="avatar">
+                                <span class="message-data-time">10:15 AM, Hoy</span>
+                            </div>
+                            <div class="message my-message">Ya vi la página de la tienda. ¡Me emociona ir hoy mismo!</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chat-message clearfix">
+                    <div class="input-group mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-send"><img src="assets/images/icons/iconoEnviar.svg" width="30px" height="30px"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Escribe tu mensaje aquí...">                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

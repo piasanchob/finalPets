@@ -1,0 +1,156 @@
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+<div>
+    <c-row class="empty_space">
+        <c-col sm="3">
+            <c-row>
+                <h1 style="color: #5D5D81;">Centro de Anuncios</h1>
+            </c-row>
+          
+            
+            <c-row class="empty_space">
+                <button class="button_attributs" (click)="addAnuncio()" > Publicar </button>
+            </c-row>
+            <c-row class="empty_space">
+                <button class="button_attributs" (click)="updateAnuncio()" > Actualizar </button>
+            </c-row>
+        </c-col>
+        <c-col>
+            <div class="cuadrito">
+                <h1 style="color: white;" class="center"> Nuevo Anuncio</h1>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <input aria-label="nomMacota" cFormControl [(ngModel)] = "nombre" placeholder="Nombre de la Mascota" />
+                    </c-col>
+                    <c-col [xs]>
+                        <select #tamano cSelect id="inputTamanno">
+                        <option>Tamaño</option>
+                        <option value="Grande">Grande</option>
+                        <option value="Mediano">Mediano</option>
+                        <option value="Pequeño">Pequeño</option>
+                        </select>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <select cSelect [(ngModel)] = "tipo_id" id="inputTipo">
+                            <option>Tipo</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </c-col>
+                    <c-col [xs]>
+                        <select cSelect [(ngModel)] = "provincia_id" id="inputProvincia">
+                            <option>Provincia</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="San José">San José</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Puntarenas">Limón</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                        </select>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <select cSelect [(ngModel)] = "nivel_id" id="inputAct">
+                            <option>Nivel de Actividad</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </c-col>
+                    <c-col [xs]>
+                        <select cSelect [(ngModel)] = "etapa_id" id="inputEtapa">
+                            <option>Etapa de vida</option>
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Adulto">Adulto</option>
+                            <option value="Viejo">Viejo</option>
+                        </select>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col>
+                        <textarea cFormControl [(ngModel)] = "descripcion" id="exampleFormControlTextarea1" rows="3" placeholder="Descripción"></textarea>
+                    </c-col>
+                </c-row>
+                <c-row class="empty_space">
+                    <c-col [xs]>
+                        <input cFormControl [(ngModel)] = "correo" id="inputEmail-1" type="email" placeholder="Correo electrónico">
+                    </c-col>
+                    <c-col [xs]>
+                        <input cFormControl [(ngModel)] = "tel" id="inputTel-1" type="tel" placeholder="Número de teléfono">
+                    </c-col>
+                </c-row>
+            </div>
+        </c-col>
+    </c-row>
+</div>

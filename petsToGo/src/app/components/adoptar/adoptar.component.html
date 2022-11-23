@@ -1,0 +1,249 @@
+
+<c-header class="header_color">
+    <c-container fluid>
+        <div class="side-menu" [@openCloseSideMenu]="sideMenuOpen ? 'open' : 'closed'" (mouseleave)="closeSideMenu()"> <!--Esto es para el menu-->>
+            <h1 class=".tittle_white" style="color: #FEFCFD;">Menú</h1>
+            <hr/>
+            <ul class="side-menu-nav">
+              <li class="nav-item">
+                <a cNavLink routerLink="/adoptar" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Adoptar <img src="assets/images/icons/btnAdoptar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/veterinarios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Veterinarias <img src="assets/images/icons/btnVeterinaria.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/tiendas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Tiendas <img src="assets/images/icons/btnTienda.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/anuncios" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Anunciar <img src="assets/images/icons/btnAnunciar.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/mis_mascotas" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Mis mascotas <img src="assets/images/icons/btnMisMascotas.svg" width="50px" height="50px"></button>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a cNavLink routerLink="/chats" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Grupos <img src="assets/images/icons/btnGrupos.svg" width="50px" height="50px"></button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a cNavLink routerLink="/first" class="side-menu-link">
+                    <button cButton color="light" variant="outline">Salir <img src="assets/images/icons/btnSalir.svg" width="50px" height="50px"></button>
+                </a>
+              </li>        
+            </ul>
+          </div>
+          
+          
+          <div class="toolbar" role="banner">
+            <a (click)="openSideMenu()">
+              <svg class="btn-sandwitch" width="30" height="23" viewBox="0 0 59 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="59" height="11" />
+                <rect y="34" width="59" height="11" />
+                <rect y="16" width="59" height="13" />
+              </svg>
+            </a>
+            <div></div>
+          </div>
+          <a cNavLink routerLink="/home">
+            <c-header-brand [routerLink]>
+              <img src="assets/images/logo/PetsToGoOscuro.png" width="80px" height="80px">
+          </c-header-brand>
+            <c-header-brand class="tittle_white">PetsToGo</c-header-brand>
+          </a>
+      <c-header-nav class="ms-auto">
+        <c-nav-item class="button_attributs" cNavLink routerLink="/profile">
+            <button cButton color="light" variant="outline" >Mi perfil <img src="assets/images/icons/Usuario.svg" width="50px" height="50px"></button>
+        </c-nav-item>
+      </c-header-nav>
+    </c-container>
+</c-header>
+
+<div>
+    <c-row class="empty_space center_attributs">
+        <c-col [sm]="5">
+            <h1 class="tittle_white" style="color: #5D5D81;">Conozca nuestras mascotas en adopción</h1>
+        </c-col>
+        <c-col [sm]="3">
+            <a cNavLink routerLink="/filtro">
+                <button cButton color="link" variant="outline"><img src="assets/images/icons/AdoptarPerros.svg" width="150px" height="150px"></button>
+                <p>Perros en adopción</p>
+            </a>
+        </c-col>
+        <c-col [sm]="3">
+            <a cNavLink routerLink="/filtro">
+                <button cButton color="link" variant="outline"><img src="assets/images/icons/AdoptarGatos.svg" width="150px" height="150px"></button>
+                <p>Gatos en adopción</p>
+            </a>
+        </c-col>
+    </c-row>
+</div>
+
+<div>
+    <c-row class="empty_space">
+        <c-col [sm]="3">
+            <!--
+            <div class="cuadrito">
+                <h2 style="color: black"> Filtros</h2>
+                <h3> Tamaño</h3>
+                <c-form-check>
+                    <input cFormCheckInput id="checkGrande" type="checkbox" />
+                    <label cFormCheckLabel for="checkGrande" class="text_white">Grande</label>
+                </c-form-check>
+                <c-form-check>
+                    <input cFormCheckInput id="checkPequeño" type="checkbox" />
+                    <label cFormCheckLabel for="checkPequeño" class="text_white">Pequeño</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkMediano" type="checkbox" />
+                    <label cFormCheckLabel for="checkMediano" class="text_white">Mediano</label>
+                  </c-form-check>
+                  <h3> Nivel de energía</h3>
+                <c-form-check>
+                    <input cFormCheckInput id="checkAlto" type="checkbox" />
+                    <label cFormCheckLabel for="checkAlto" class="text_white">Alto</label>
+                </c-form-check>
+                <c-form-check>
+                    <input cFormCheckInput id="checkMedio" type="checkbox" />
+                    <label cFormCheckLabel for="checkMedio" class="text_white">Medio</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkBajo" type="checkbox" />
+                    <label cFormCheckLabel for="checkBajo" class="text_white">Bajo</label>
+                  </c-form-check>
+                  <h3> Provincia</h3>
+                <c-form-check>
+                    <input cFormCheckInput id="checkCartago" type="checkbox" />
+                    <label cFormCheckLabel for="checkCartago" class="text_white">Cartago</label>
+                </c-form-check>
+                <c-form-check>
+                    <input cFormCheckInput id="checkSJ" type="checkbox" />
+                    <label cFormCheckLabel for="checkSJ" class="text_white">San José</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkHeredia" type="checkbox" />
+                    <label cFormCheckLabel for="checkHeredia" class="text_white">Heredia</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkAlajuela" type="checkbox" />
+                    <label cFormCheckLabel for="checkAlajuela" class="text_white">Alajuela</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkPuntarenas" type="checkbox" />
+                    <label cFormCheckLabel for="checkPuntarenas" class="text_white">Puntarenas</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkLimon" type="checkbox" />
+                    <label cFormCheckLabel for="checkLimon" class="text_white">Limón</label>
+                  </c-form-check>
+                  <c-form-check>
+                    <input cFormCheckInput id="checkGuanacaste" type="checkbox" />
+                    <label cFormCheckLabel for="checkGuanacaste" class="text_white">Guanacaste</label>
+                  </c-form-check>
+            </div>
+            -->
+        </c-col>
+        <c-col>
+            <c-row class="empty_space">
+                <c-col sm="4">
+                    <a cNavLink routerLink="/desc_mascota">
+                        <button cButton color="link" variant="outline"><img src="assets/images/mascotas/Merlin.svg" width="150px" height="150px"></button>
+                        <table class = "table table-stripped">
+                          <thead>
+                            <tr>
+                              <th>nombre</th>
+                              <th>tipo</th>
+                              <th>provincia</th>
+                              <th>nivel</th>
+                              <th>etapa</th>
+                              <th>usuario</th>
+                              <th>descripcion</th>
+                              <th>correo</th>
+                              <th>tel</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor= "let dataItem of AdoptarList">
+                              <td>{{dataItem.nombre}}</td>
+
+                              <td>{{dataItem.tipo_id}}</td>
+                              <td>{{dataItem.provincia_id}}</td>
+                              <td>{{dataItem.nivel_id}}</td>
+                              <td>{{dataItem.etapa_id}}</td>
+                              <td>{{dataItem.usuario_id}}</td>
+                              <td>{{dataItem.descripcion}}</td>
+                              <td>{{dataItem.correo}}</td>
+                              <td>{{dataItem.tel}}</td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                    </a>
+                </c-col>
+                <c-col sx>
+                    <a cNavLink routerLink="/desc_mascota">
+                        <button cButton color="link" variant="outline"><img src="assets/images/mascotas/Bruno.svg" width="150px" height="150px"></button>
+                        <p></p>
+                    </a>
+                </c-col>
+                <c-col sx>
+                    <a cNavLink routerLink="/desc_mascota">
+                        <button cButton color="link" variant="outline"><img src="assets/images/mascotas/Coco.svg" width="150px" height="150px"></button>
+                        <p></p>
+                    </a>
+                </c-col>
+            </c-row>
+            <!--
+            <c-row class="empty_space">
+                <c-col sx>
+                    <a cNavLink routerLink="/desc_mascota">
+                        <button cButton color="link" variant="outline"><img src="assets/images/mascotas/Musi.svg" width="150px" height="150px"></button>
+                        <p>Musi</p>
+                    </a>
+                </c-col>
+                <c-col sx>
+                    <a cNavLink routerLink="/desc_mascota">
+                        <button cButton color="link" variant="outline"><img src="assets/images/mascotas/Inge.svg" width="150px" height="150px"></button>
+                        <p>Inge</p>
+                    </a>
+                </c-col>
+                <c-col sx>
+                    <a cNavLink routerLink="/desc_mascota">
+                        <button cButton color="link" variant="outline"><img src="assets/images/mascotas/Osito.svg" width="150px" height="150px"></button>
+                        <p>Osito</p>
+                    </a>
+                </c-col>
+            </c-row>-->
+        </c-col>
+    </c-row>
+</div>
+
+<div class="center_down">
+    <c-pagination aria-label="Page navigation example">
+        <li cPageItem>
+          <a cPageLink [routerLink]>Anterior</a>
+        </li>
+        <li cPageItem>
+          <a cPageLink [routerLink]>1</a>
+        </li>
+        <li cPageItem>
+          <a cPageLink [routerLink]>2</a>
+        </li>
+        <li cPageItem>
+          <a cPageLink [routerLink]>3</a>
+        </li>
+        <li cPageItem>
+          <a cPageLink [routerLink]>Siguiente</a>
+        </li>
+      </c-pagination>
+</div>
+
